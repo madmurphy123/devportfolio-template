@@ -151,9 +151,13 @@ header {
     animation-iteration-count: 1;
     animation-timing-function: ease;
     animation-duration: 0.75s;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
 
     ul {
-        display: inline-block;
+        // display: inline-block;
+       
         background: $background;
         text-align: center;
         padding: 10px;
