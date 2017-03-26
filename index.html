@@ -109,22 +109,7 @@
                 <div class="col-md-8">
         <h2 class="heading">Experience</h2>
          <div id="googlemap"></div>
-    <script>
-      function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
-        var map = new google.maps.Map(document.getElementById('googlemap'), {
-          zoom: 4,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIB4laIon2oKpApQko2d14JZHWKCWlzYo&callback=initMap">
-    </script>
+    
             <!-- <div data-date="September 2015 – September 2016">
                 <h3>Employer Name</h3>
                 <h4>Job Title</h4>
@@ -348,6 +333,23 @@
    <!--  <script src="serviceworker.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/scripts.min.js"></script>
+
+    <script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('googlemap'), {
+          zoom: 4,
+          center: uluru
+        });
+        // var marker = new google.maps.Marker({
+        //   position: uluru,
+        //   map: map
+        // });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIB4laIon2oKpApQko2d14JZHWKCWlzYo&callback=initMap">
+    </script>
 
 </body>
 
