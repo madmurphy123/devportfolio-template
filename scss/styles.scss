@@ -947,14 +947,8 @@ footer {
     }
 
     .blog-image {
-        // width: 100%;
         display: none;
     }
-
-    // .blog-image img {
-    //         width: 100%;
-    //         margin-bottom: 2em;
-    // }
 
 }
 
@@ -1192,4 +1186,10 @@ input {
 
 .blog-image {
     float: left;
+}
+
+#blog {
+    padding: 50px 15px;
+    border-bottom: 1px solid #dcd9d9;
+    text-align: center;
 }
