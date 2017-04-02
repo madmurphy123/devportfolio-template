@@ -883,6 +883,18 @@ footer {
         }
     }
 
+     #lead {
+        position: relative;
+    height: 100vh;
+    width: 100%;
+    min-height: 500px;
+    max-height: 1080px;
+    background: url(../images/backdrop-mobile.png);
+    background-size: cover;
+    padding: 15px;
+    overflow: hidden;
+    }
+
     #lead-content {
         h1 {
             font-size: 2em;
@@ -932,9 +944,9 @@ footer {
 @media only screen and (max-width : 480px) {
 
     #lead {
-        background: url(../images/backdrop-mobile.png);
+        background: none;
     }
-    
+
     #lead-content {
         h1 {
             font-size: 1.5em;
