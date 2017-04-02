@@ -931,6 +931,10 @@ footer {
 // Extra Small Devices
 @media only screen and (max-width : 480px) {
 
+    #lead {
+        background: url(../images/backdrop-mobile.png);
+    }
+    
     #lead-content {
         h1 {
             font-size: 1.5em;
