@@ -947,13 +947,14 @@ footer {
     }
 
     .blog-image {
-        width: 100%;
+        // width: 100%;
+        display: none;
     }
 
-    .blog-image img {
-            width: 100%;
-            margin-bottom: 2em;
-    }
+    // .blog-image img {
+    //         width: 100%;
+    //         margin-bottom: 2em;
+    // }
 
 }
 
