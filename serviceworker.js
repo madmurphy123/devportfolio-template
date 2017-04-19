@@ -5,7 +5,7 @@ var newsAPIJSON = "https://newsapi.org/v1/articles?source=bbc-news&apiKey=a5ba2a
 
 var CACHED_URLS = [
     // Our HTML
-    BASE_PATH + 'first.html',
+    BASE_PATH + 'index.html',
     
     BASE_PATH + 'second.html',
     BASE_PATH + 'appimages/jack.jpg',
@@ -24,7 +24,6 @@ var CACHED_URLS = [
     //Images for page
     BASE_PATH + 'appimages/offlinemap.jpg',
     BASE_PATH + 'appimages/dino.png',
-    BASE_PATH + 'appimages/jack.jpg',
     BASE_PATH + 'appimages/paddy.jpg',
     BASE_PATH + 'appimages/favicon.ico',
     BASE_PATH + 'appimages/favicon-16x16.png',
@@ -49,6 +48,7 @@ var CACHED_URLS = [
     BASE_PATH + 'offline-map.js',
     // BASE_PATH + 'scripts.js',
     BASE_PATH + 'js/scripts.min.js',
+    BASE_PATH + 'js/scripts.js',
     
     //json
     BASE_PATH + 'events.json',
@@ -77,12 +77,12 @@ self.addEventListener('install', function(event) {
 self.addEventListener('fetch', function(event) {
   var requestURL = new URL(event.request.url);
   // Handle requests for index.html
-  if (requestURL.pathname === BASE_PATH + 'first.html') {
+  if (requestURL.pathname === BASE_PATH + 'index.html') {
     event.respondWith(
       caches.open(CACHE_NAME).then(function(cache) {
-        return cache.match('first.html').then(function(cachedResponse) {
-          var fetchPromise = fetch('first.html').then(function(networkResponse) {
-            cache.put('first.html', networkResponse.clone());
+        return cache.match('index.html').then(function(cachedResponse) {
+          var fetchPromise = fetch('index.html').then(function(networkResponse) {
+            cache.put('index.html', networkResponse.clone());
             return networkResponse;
           });
           return cachedResponse || fetchPromise;
