@@ -36,19 +36,19 @@ var CACHED_URLS = [
 
     BASE_PATH + 'appimages/ms-icon-310x310.png',
    
-    BASE_PATH + 'appimages/backdrop.png', 
-    BASE_PATH + 'appimages/backdrop-mobile.png', 
-    BASE_PATH + 'appimages/car.png', 
-    BASE_PATH + 'appimages/fish.png', 
-    BASE_PATH + 'appimages/dice.png', 
-    BASE_PATH + 'appimages/hangman.png', 
-    BASE_PATH + 'appimages/icon.png', 
-    BASE_PATH + 'appimages/me.png',
+    // BASE_PATH + 'appimages/backdrop.png', 
+    // BASE_PATH + 'appimages/backdrop-mobile.png', 
+    // BASE_PATH + 'appimages/car.png', 
+    // BASE_PATH + 'appimages/fish.png', 
+    // BASE_PATH + 'appimages/dice.png', 
+    // BASE_PATH + 'appimages/hangman.png', 
+    // BASE_PATH + 'appimages/icon.png', 
+    // BASE_PATH + 'appimages/me.png',
     // JavaScript
     BASE_PATH + 'offline-map.js',
     // BASE_PATH + 'scripts.js',
-    BASE_PATH + 'js/scripts.min.js',
-    BASE_PATH + 'js/scripts.js',
+    // BASE_PATH + 'js/scripts.min.js',
+    // BASE_PATH + 'js/scripts.js',
     
     //json
     BASE_PATH + 'events.json',
@@ -59,8 +59,8 @@ var CACHED_URLS = [
     'https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en',
     'https://fonts.googleapis.com/icon?family=Material+Icons',
     BASE_PATH + 'min-style.css',
-    BASE_PATH + 'css/bootstrap.min.css',
-    BASE_PATH + 'css/styles.css'
+    // BASE_PATH + 'css/bootstrap.min.css',
+    // BASE_PATH + 'css/styles.css'
 ];
 
 var googleMapsAPIJS = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyD8GS9IEYRrTEbXtN7rI1Z6in3XFB9z2W0&callback=initMap';
