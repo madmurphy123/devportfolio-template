@@ -39,7 +39,6 @@ var CACHED_URLS = [
 
     // JavaScript
     BASE_PATH + 'offline-map.js',
-    BASE_PATH + 'material.js',
     BASE_PATH + 'scripts.js',
     
     //json
@@ -106,60 +105,6 @@ self.addEventListener('fetch', function(event) {
     );
       
       // Handle requests for events JSON file
-  } else if (requestURL.pathname === BASE_PATH + 'events.json') {
-    event.respondWith(
-      caches.open(CACHE_NAME).then(function(cache) {
-        return fetch(event.request).then(function(networkResponse) {
-          cache.put(event.request, networkResponse.clone());
-          return networkResponse;
-        }).catch(function() {
-          return caches.match(event.request);
-        });
-      })
-    );
-  } else if (requestURL.href === newsAPIJSON) {
-    event.respondWith(
-      caches.open(CACHE_NAME).then(function(cache) {
-        return fetch(event.request).then(function(networkResponse) {
-          cache.put(event.request, networkResponse.clone());
-          caches.delete(TEMP_IMAGE_CACHE_NAME);
-          return networkResponse;
-        }).catch(function() {
-          return caches.match(event.request);
-        });
-      })
-    );
-  // Handle requests for event images.
-  } else if (requestURL.pathname.includes('/eventsimages/')) {
-    event.respondWith(
-      caches.open(CACHE_NAME).then(function(cache) {
-        return cache.match(event.request).then(function(cacheResponse) {
-          return cacheResponse||fetch(event.request).then(function(networkResponse) {
-            cache.put(event.request, networkResponse.clone());
-            return networkResponse;
-          }).catch(function() {
-            return cache.match('appimages/event-default.png');
-          });
-        });
-      })
-    );
-  // 
-  } else if (requestURL.href.includes('bbci.co.uk/news/')) {
-    event.respondWith(
-      caches.open(TEMP_IMAGE_CACHE_NAME).then(function(cache) {
-        return cache.match(event.request).then(function(cacheResponse) {
-          return cacheResponse||fetch(event.request, {mode: 'no-cors'}).then(function(networkResponse) {
-            cache.put(event.request, networkResponse.clone());
-            return networkResponse;
-          }).catch(function() {
-            return cache.match('appimages/news-default.jpg');
-          });
-        });
-      })
-    );
-
-      
-      // Handle requests for events JSON file
   // } else if (requestURL.pathname === BASE_PATH + 'events.json') {
   //   event.respondWith(
   //     caches.open(CACHE_NAME).then(function(cache) {
@@ -171,7 +116,19 @@ self.addEventListener('fetch', function(event) {
   //       });
   //     })
   //   );
-  // Handle requests for event images.
+  // } else if (requestURL.href === newsAPIJSON) {
+  //   event.respondWith(
+  //     caches.open(CACHE_NAME).then(function(cache) {
+  //       return fetch(event.request).then(function(networkResponse) {
+  //         cache.put(event.request, networkResponse.clone());
+  //         caches.delete(TEMP_IMAGE_CACHE_NAME);
+  //         return networkResponse;
+  //       }).catch(function() {
+  //         return caches.match(event.request);
+  //       });
+  //     })
+  //   );
+  // // Handle requests for event images.
   // } else if (requestURL.pathname.includes('/eventsimages/')) {
   //   event.respondWith(
   //     caches.open(CACHE_NAME).then(function(cache) {
@@ -185,6 +142,48 @@ self.addEventListener('fetch', function(event) {
   //       });
   //     })
   //   );
+  // // 
+  // } else if (requestURL.href.includes('bbci.co.uk/news/')) {
+  //   event.respondWith(
+  //     caches.open(TEMP_IMAGE_CACHE_NAME).then(function(cache) {
+  //       return cache.match(event.request).then(function(cacheResponse) {
+  //         return cacheResponse||fetch(event.request, {mode: 'no-cors'}).then(function(networkResponse) {
+  //           cache.put(event.request, networkResponse.clone());
+  //           return networkResponse;
+  //         }).catch(function() {
+  //           return cache.match('appimages/news-default.jpg');
+  //         });
+  //       });
+  //     })
+  //   );
+
+      
+      Handle requests for events JSON file
+  } else if (requestURL.pathname === BASE_PATH + 'events.json') {
+    event.respondWith(
+      caches.open(CACHE_NAME).then(function(cache) {
+        return fetch(event.request).then(function(networkResponse) {
+          cache.put(event.request, networkResponse.clone());
+          return networkResponse;
+        }).catch(function() {
+          return caches.match(event.request);
+        });
+      })
+    );
+  Handle requests for event images.
+  } else if (requestURL.pathname.includes('/eventsimages/')) {
+    event.respondWith(
+      caches.open(CACHE_NAME).then(function(cache) {
+        return cache.match(event.request).then(function(cacheResponse) {
+          return cacheResponse||fetch(event.request).then(function(networkResponse) {
+            cache.put(event.request, networkResponse.clone());
+            return networkResponse;
+          }).catch(function() {
+            return cache.match('appimages/event-default.png');
+          });
+        });
+      })
+    );
 
   } else if (
     CACHED_URLS.includes(requestURL.href) ||
