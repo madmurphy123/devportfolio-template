@@ -168,7 +168,7 @@ self.addEventListener('fetch', function(event) {
   //   );
 
       
-      Handle requests for events JSON file
+      // Handle requests for events JSON file
   } else if (requestURL.pathname === BASE_PATH + 'events.json') {
     event.respondWith(
       caches.open(CACHE_NAME).then(function(cache) {
