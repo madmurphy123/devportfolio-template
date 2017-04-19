@@ -47,8 +47,7 @@ var CACHED_URLS = [
 
     // JavaScript
     BASE_PATH + 'offline-map.js',
-    BASE_PATH + 'material.js',
-    BASE_PATH + 'scripts.js',
+    BASE_PATH + 'js/scripts.js',
     
     //json
     BASE_PATH + 'events.json',
@@ -58,8 +57,8 @@ var CACHED_URLS = [
   // CSS and fonts
     'https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en',
     'https://fonts.googleapis.com/icon?family=Material+Icons',
-    BASE_PATH + 'min-style.css',
-    BASE_PATH + 'styles.css'
+    BASE_PATH + 'css/bootstrap.css',
+    BASE_PATH + 'css/styles.css'
 ];
 
 var googleMapsAPIJS = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyD8GS9IEYRrTEbXtN7rI1Z6in3XFB9z2W0&callback=initMap';
