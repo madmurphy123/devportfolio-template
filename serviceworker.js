@@ -36,19 +36,19 @@ var CACHED_URLS = [
 
     BASE_PATH + 'appimages/ms-icon-310x310.png',
    
-    // BASE_PATH + 'appimages/backdrop.png', 
-    // BASE_PATH + 'appimages/backdrop-mobile.png', 
-    // BASE_PATH + 'appimages/car.png', 
-    // BASE_PATH + 'appimages/fish.png', 
-    // BASE_PATH + 'appimages/dice.png', 
-    // BASE_PATH + 'appimages/hangman.png', 
-    // BASE_PATH + 'appimages/icon.png', 
-    // BASE_PATH + 'appimages/me.png',
+    BASE_PATH + 'appimages/backdrop.png', 
+    BASE_PATH + 'appimages/backdrop-mobile.png', 
+    BASE_PATH + 'appimages/car.png', 
+    BASE_PATH + 'appimages/fish.png', 
+    BASE_PATH + 'appimages/dice.png', 
+    BASE_PATH + 'appimages/hangman.png', 
+    BASE_PATH + 'appimages/icon.png', 
+    BASE_PATH + 'appimages/me.png',
     // JavaScript
     BASE_PATH + 'offline-map.js',
     // BASE_PATH + 'scripts.js',
-    // BASE_PATH + 'js/scripts.min.js',
-    // BASE_PATH + 'js/scripts.js',
+    BASE_PATH + 'js/scripts.min.js',
+    BASE_PATH + 'js/scripts.js',
     
     //json
     BASE_PATH + 'events.json',
@@ -59,8 +59,8 @@ var CACHED_URLS = [
     'https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en',
     'https://fonts.googleapis.com/icon?family=Material+Icons',
     BASE_PATH + 'min-style.css',
-    // BASE_PATH + 'css/bootstrap.min.css',
-    // BASE_PATH + 'css/styles.css'
+    BASE_PATH + 'css/bootstrap.min.css',
+    BASE_PATH + 'css/styles.css'
 ];
 
 var googleMapsAPIJS = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyD8GS9IEYRrTEbXtN7rI1Z6in3XFB9z2W0&callback=initMap';
@@ -115,57 +115,57 @@ self.addEventListener('fetch', function(event) {
     );
       
       // Handle requests for events JSON file
-  // } else if (requestURL.pathname === BASE_PATH + 'events.json') {
-  //   event.respondWith(
-  //     caches.open(CACHE_NAME).then(function(cache) {
-  //       return fetch(event.request).then(function(networkResponse) {
-  //         cache.put(event.request, networkResponse.clone());
-  //         return networkResponse;
-  //       }).catch(function() {
-  //         return caches.match(event.request);
-  //       });
-  //     })
-  //   );
-  // } else if (requestURL.href === newsAPIJSON) {
-  //   event.respondWith(
-  //     caches.open(CACHE_NAME).then(function(cache) {
-  //       return fetch(event.request).then(function(networkResponse) {
-  //         cache.put(event.request, networkResponse.clone());
-  //         caches.delete(TEMP_IMAGE_CACHE_NAME);
-  //         return networkResponse;
-  //       }).catch(function() {
-  //         return caches.match(event.request);
-  //       });
-  //     })
-  //   );
-  // // Handle requests for event images.
-  // } else if (requestURL.pathname.includes('/eventsimages/')) {
-  //   event.respondWith(
-  //     caches.open(CACHE_NAME).then(function(cache) {
-  //       return cache.match(event.request).then(function(cacheResponse) {
-  //         return cacheResponse||fetch(event.request).then(function(networkResponse) {
-  //           cache.put(event.request, networkResponse.clone());
-  //           return networkResponse;
-  //         }).catch(function() {
-  //           return cache.match('appimages/event-default.png');
-  //         });
-  //       });
-  //     })
-  //   );
-  // // 
-  // } else if (requestURL.href.includes('bbci.co.uk/news/')) {
-  //   event.respondWith(
-  //     caches.open(TEMP_IMAGE_CACHE_NAME).then(function(cache) {
-  //       return cache.match(event.request).then(function(cacheResponse) {
-  //         return cacheResponse||fetch(event.request, {mode: 'no-cors'}).then(function(networkResponse) {
-  //           cache.put(event.request, networkResponse.clone());
-  //           return networkResponse;
-  //         }).catch(function() {
-  //           return cache.match('appimages/news-default.jpg');
-  //         });
-  //       });
-  //     })
-  //   );
+  } else if (requestURL.pathname === BASE_PATH + 'events.json') {
+    event.respondWith(
+      caches.open(CACHE_NAME).then(function(cache) {
+        return fetch(event.request).then(function(networkResponse) {
+          cache.put(event.request, networkResponse.clone());
+          return networkResponse;
+        }).catch(function() {
+          return caches.match(event.request);
+        });
+      })
+    );
+  } else if (requestURL.href === newsAPIJSON) {
+    event.respondWith(
+      caches.open(CACHE_NAME).then(function(cache) {
+        return fetch(event.request).then(function(networkResponse) {
+          cache.put(event.request, networkResponse.clone());
+          caches.delete(TEMP_IMAGE_CACHE_NAME);
+          return networkResponse;
+        }).catch(function() {
+          return caches.match(event.request);
+        });
+      })
+    );
+  // Handle requests for event images.
+  } else if (requestURL.pathname.includes('/eventsimages/')) {
+    event.respondWith(
+      caches.open(CACHE_NAME).then(function(cache) {
+        return cache.match(event.request).then(function(cacheResponse) {
+          return cacheResponse||fetch(event.request).then(function(networkResponse) {
+            cache.put(event.request, networkResponse.clone());
+            return networkResponse;
+          }).catch(function() {
+            return cache.match('appimages/event-default.png');
+          });
+        });
+      })
+    );
+  // 
+  } else if (requestURL.href.includes('bbci.co.uk/news/')) {
+    event.respondWith(
+      caches.open(TEMP_IMAGE_CACHE_NAME).then(function(cache) {
+        return cache.match(event.request).then(function(cacheResponse) {
+          return cacheResponse||fetch(event.request, {mode: 'no-cors'}).then(function(networkResponse) {
+            cache.put(event.request, networkResponse.clone());
+            return networkResponse;
+          }).catch(function() {
+            return cache.match('appimages/news-default.jpg');
+          });
+        });
+      })
+    );
 
       
       // Handle requests for events JSON file
@@ -223,8 +223,5 @@ self.addEventListener('activate', function(event) {
     })
   );
 });
-
-
-
 
 
