@@ -47,6 +47,7 @@ var CACHED_URLS = [
 
     // JavaScript
     BASE_PATH + 'offline-map.js',
+     BASE_PATH + 'scripts.js',
    'js/scripts.js',
     
     //json
