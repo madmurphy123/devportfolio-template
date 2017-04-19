@@ -1198,3 +1198,12 @@ input {
     border-bottom: 1px solid #dcd9d9;
     text-align: center;
 }
+
+#map-container.offline-map {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  background-image: url('appimages/offlinemap.jpg');
+}
