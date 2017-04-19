@@ -21,14 +21,6 @@ var CACHED_URLS = [
     BASE_PATH + 'appimages/android-icon-192x192.png',
     BASE_PATH + 'appimages/favicon-32x32.png',
 
-    BASE_PATH + 'appimages/car.png',
-    BASE_PATH + 'appimages/hangman.png',
-    BASE_PATH + 'appimages/dice.png',
-    BASE_PATH + 'appimages/me.png',
-    BASE_PATH + 'appimages/fish.png',
-    // BASE_PATH + 'appimages/backdrop.png',
-    // BASE_PATH + 'appimages/backdrop-mobile.png',
-
     //Images for page
     BASE_PATH + 'appimages/offlinemap.jpg',
     BASE_PATH + 'appimages/dino.png',
@@ -167,32 +159,32 @@ self.addEventListener('fetch', function(event) {
     );
 
       
-      // Handle requests for events JSON file
-  } else if (requestURL.pathname === BASE_PATH + 'events.json') {
-    event.respondWith(
-      caches.open(CACHE_NAME).then(function(cache) {
-        return fetch(event.request).then(function(networkResponse) {
-          cache.put(event.request, networkResponse.clone());
-          return networkResponse;
-        }).catch(function() {
-          return caches.match(event.request);
-        });
-      })
-    );
-  // Handle requests for event images.
-  } else if (requestURL.pathname.includes('/eventsimages/')) {
-    event.respondWith(
-      caches.open(CACHE_NAME).then(function(cache) {
-        return cache.match(event.request).then(function(cacheResponse) {
-          return cacheResponse||fetch(event.request).then(function(networkResponse) {
-            cache.put(event.request, networkResponse.clone());
-            return networkResponse;
-          }).catch(function() {
-            return cache.match('appimages/event-default.png');
-          });
-        });
-      })
-    );
+  //     // Handle requests for events JSON file
+  // } else if (requestURL.pathname === BASE_PATH + 'events.json') {
+  //   event.respondWith(
+  //     caches.open(CACHE_NAME).then(function(cache) {
+  //       return fetch(event.request).then(function(networkResponse) {
+  //         cache.put(event.request, networkResponse.clone());
+  //         return networkResponse;
+  //       }).catch(function() {
+  //         return caches.match(event.request);
+  //       });
+  //     })
+  //   );
+  // // Handle requests for event images.
+  // } else if (requestURL.pathname.includes('/eventsimages/')) {
+  //   event.respondWith(
+  //     caches.open(CACHE_NAME).then(function(cache) {
+  //       return cache.match(event.request).then(function(cacheResponse) {
+  //         return cacheResponse||fetch(event.request).then(function(networkResponse) {
+  //           cache.put(event.request, networkResponse.clone());
+  //           return networkResponse;
+  //         }).catch(function() {
+  //           return cache.match('appimages/event-default.png');
+  //         });
+  //       });
+  //     })
+  //   );
 
   } else if (
     CACHED_URLS.includes(requestURL.href) ||
