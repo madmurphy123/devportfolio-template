@@ -180,7 +180,7 @@ self.addEventListener('fetch', function(event) {
         });
       })
     );
-  Handle requests for event images.
+  // Handle requests for event images.
   } else if (requestURL.pathname.includes('/eventsimages/')) {
     event.respondWith(
       caches.open(CACHE_NAME).then(function(cache) {
