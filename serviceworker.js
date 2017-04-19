@@ -21,6 +21,14 @@ var CACHED_URLS = [
     BASE_PATH + 'appimages/android-icon-192x192.png',
     BASE_PATH + 'appimages/favicon-32x32.png',
 
+    BASE_PATH + 'appimages/car.png',
+    BASE_PATH + 'appimages/hangman.png',
+    BASE_PATH + 'appimages/dice.png',
+    BASE_PATH + 'appimages/me.png',
+    BASE_PATH + 'appimages/fish.png',
+    BASE_PATH + 'appimages/backdrop.png',
+    BASE_PATH + 'appimages/backdrop-mobile.png',
+
     //Images for page
     BASE_PATH + 'appimages/offlinemap.jpg',
     BASE_PATH + 'appimages/dino.png',
