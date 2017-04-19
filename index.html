@@ -370,9 +370,24 @@
             </div>
         </div>
     </footer>
+<script>
+    if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('serviceworker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }).catch(function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+
+</script>
     <!-- End footer -->
    <!--  <script src="serviceworker.js"></script> -->
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/scripts.min.js"></script>
 
     <script>
       function initMap() {
@@ -391,10 +406,6 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIB4laIon2oKpApQko2d14JZHWKCWlzYo&callback=initMap">
     </script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/scripts.min.js"></script>
-    <script src="scripts.js"></script> 
 
 </body>
 
