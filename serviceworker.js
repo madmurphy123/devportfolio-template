@@ -36,14 +36,14 @@ var CACHED_URLS = [
 
     BASE_PATH + 'appimages/ms-icon-310x310.png',
    
-    BASE_PATH + 'images/backdrop.png', 
-    BASE_PATH + 'images/backdrop-mobile.png', 
-    BASE_PATH + 'images/car.png', 
-    BASE_PATH + 'images/fish.png', 
-    BASE_PATH + 'images/dice.png', 
-    BASE_PATH + 'images/hangman.png', 
-    BASE_PATH + 'images/icon.png', 
-    BASE_PATH + 'images/me.png',
+    BASE_PATH + 'appimages/backdrop.png', 
+    BASE_PATH + 'appimages/backdrop-mobile.png', 
+    BASE_PATH + 'appimages/car.png', 
+    BASE_PATH + 'appimages/fish.png', 
+    BASE_PATH + 'appimages/dice.png', 
+    BASE_PATH + 'appimages/hangman.png', 
+    BASE_PATH + 'appimages/icon.png', 
+    BASE_PATH + 'appimages/me.png',
     // JavaScript
     BASE_PATH + 'offline-map.js',
     // BASE_PATH + 'scripts.js',
