@@ -194,6 +194,9 @@ header {
 }
 
 #menu {
+    position: fixed;
+    width: 100%;
+    
     &.active {
         display: block;
     }
