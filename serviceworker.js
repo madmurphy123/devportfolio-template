@@ -8,6 +8,7 @@ var CACHED_URLS = [
     BASE_PATH + 'index.html',
     
     BASE_PATH + 'second.html',
+    BASE_PATH + 'third.html',
     BASE_PATH + 'appimages/jack.jpg',
     BASE_PATH + 'appimages/news-default.jpg', 
 
@@ -93,6 +94,19 @@ self.addEventListener('fetch', function(event) {
         return cache.match('second.html').then(function(cachedResponse) {
           var fetchPromise = fetch('second.html').then(function(networkResponse) {
             cache.put('second.html', networkResponse.clone());
+            return networkResponse;
+          });
+          return cachedResponse || fetchPromise;
+        });
+      })
+    );
+
+  } else if (requestURL.pathname === BASE_PATH + 'third.html') {
+    event.respondWith(
+      caches.open(CACHE_NAME).then(function(cache) {
+        return cache.match('third.html').then(function(cachedResponse) {
+          var fetchPromise = fetch('third.html').then(function(networkResponse) {
+            cache.put('third.html', networkResponse.clone());
             return networkResponse;
           });
           return cachedResponse || fetchPromise;
