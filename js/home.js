@@ -10,6 +10,8 @@
   });
 }
 
+google.maps.event.addListener(map, 'click', find_closest_marker);
+
  function initMap() {
         var uluru = {lat: 53.009111, lng: -2.176581 };
         var map = new google.maps.Map(document.getElementById('googlemap'), {
@@ -23,7 +25,7 @@
         });
 
         infoWindow = new google.maps.InfoWindow;
-        google.maps.event.addListener(map, 'click', find_closest_marker);
+
       
 
        if (navigator.geolocation) {
