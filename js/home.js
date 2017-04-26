@@ -23,6 +23,7 @@
         });
 
         infoWindow = new google.maps.InfoWindow;
+        google.maps.event.addListener(map, 'click', find_closest_marker);
       
 
        if (navigator.geolocation) {
@@ -53,7 +54,7 @@
         infoWindow.open(map);
       }
 
-        google.maps.event.addListener(map, 'click', find_closest_marker);
+        
 
       function rad(x) {return x*Math.PI/180;}
 
