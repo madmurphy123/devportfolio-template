@@ -23,8 +23,6 @@
         });
 
         infoWindow = new google.maps.InfoWindow;
-
-        google.maps.event.addListener(map, 'click', find_closest_marker);
       
 
        if (navigator.geolocation) {
@@ -54,6 +52,8 @@
                               'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
       }
+
+        google.maps.event.addListener(map, 'click', find_closest_marker);
 
       function rad(x) {return x*Math.PI/180;}
 function find_closest_marker( event ) {
