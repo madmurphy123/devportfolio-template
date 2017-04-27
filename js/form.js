@@ -5,7 +5,7 @@ if(askJackForm){
         const contact = {
             "name": e.target.name.value,
             "number": e.target.number.value,
-            "_replyto": e.target._replyto.value,
+            "email": e.target.email.value,
             "message": e.target.message.value,
         };
 
