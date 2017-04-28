@@ -88,7 +88,7 @@
     <div id="contact">
         <h2>Get in Touch</h2>
         <div id="contact-form">
-           <!--  <form id="contactForm">
+            <form id="contactForm">
                 <input type="hidden" name="_subject" value="Contact request from personal website" />
                 <input type="text" name="name" placeholder="Name" required>
                 <input type="number" name="number" placeholder="Contact Number" required>
@@ -96,13 +96,13 @@
                 <textarea name="message" placeholder="Your message" required></textarea>
                 <div id="projectupdate">
                  <label><input type="checkbox" /> Recieve updates on my projects</label>
-                 </div> -->
+                 </div>
                <!--  <input type="checkbox" name="recieveUpdates" value="Updates" checked><h2>Recieve updates on my projects<h2><br> -->
                <!--  method="POST" action="https://formspree.io/email@email.com" -->
-           <!--       <input type="submit" value="Send" />
-            </form> -->
+                 <input type="submit" value="Send" />
+            </form>
 
-            <form id="askJackForm">
+         <!--    <form id="askJackForm">
               <p>
                 <label for="name">Name: </label>
                 <input name="name" />
@@ -122,7 +122,7 @@
                 <input type="submit" value="Ask" />
               </p>
             </form>
-        </div>
+        </div> -->
         <!-- End #contact-form -->
     </div>
     <!-- End #contact -->
@@ -183,9 +183,10 @@ if(askJackForm){
             "name": e.target.name.value,
             "email": e.target.email.value,
             "question": e.target.question.value,
+            "message": e.target.message.value,
         };
 
-        fetch("http://jackcat.co.uk/", {mode: "no-cors", method: "POST", body: contact})
+        fetch("https://madmurphy123.github.io/devportfolio-template/third.html", {mode: "no-cors", method: "POST", body: contact})
             .then(response => {
                 console.log('hello response!', response);
             }).catch(() => {
