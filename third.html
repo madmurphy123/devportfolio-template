@@ -195,8 +195,6 @@ if(askJackForm){
                 const existingContacts = localStorage.getItem('contact');
                 if(existingContacts){
                     allContacts = JSON.parse(existingContacts);
-                    console.log(allContacts);
-                    askJackForm.name.value = allContacts.name;
                 }
 
                 allContacts.push(contact);

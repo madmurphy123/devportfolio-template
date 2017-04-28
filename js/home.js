@@ -29,15 +29,8 @@
 
         // map.addListener(map, 'click', find_closest_marker);
 
-      
-      google.maps.event.addListener(map, "click", function (event) {
-    // var latitude = event.latLng.lat();
-    // var longitude = event.latLng.lng();
-    // console.log( latitude + ', ' + longitude );
-
-
-
-    var lat = pos.lat;
+      document.getElementById("distance").addEventListener("click", function (event) {
+          var lat = pos.lat;
     var lng =  pos.lng;
     var R = 6371; // radius of earth in km
     var distances = [];
@@ -58,7 +51,36 @@
   
 
     alert(d.toFixed(2) + "km");
-});
+      });
+      // google.maps.event.addListener(map, "click", function (event) {
+    // var latitude = event.latLng.lat();
+    // var longitude = event.latLng.lng();
+    // console.log( latitude + ', ' + longitude );
+
+
+
+//     var lat = pos.lat;
+//     var lng =  pos.lng;
+//     var R = 6371; // radius of earth in km
+//     var distances = [];
+//     var closest = -1;
+  
+//         var mlat = marker.position.lat();
+//         var mlng = marker.position.lng();
+//         var dLat  = rad(mlat - lat);
+//         var dLong = rad(mlng - lng);
+//         var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+//             Math.cos(rad(lat)) * Math.cos(rad(lat)) * Math.sin(dLong/2) * Math.sin(dLong/2);
+//         var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+//         var d = R * c;
+//         // distances[i] = d;
+//         // if ( closest == -1 || d < distances[closest] ) {
+//         //     closest = i;
+//         // }
+  
+
+//     alert(d.toFixed(2) + "km");
+// });
 
         infoWindow = new google.maps.InfoWindow;    
 
