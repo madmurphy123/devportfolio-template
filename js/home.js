@@ -50,7 +50,10 @@
         // }
   
 
-    alert(d.toFixed(2) + "km");
+    var result = d.toFixed(2) + "km";
+
+     document.getElementById("distanceResult").innerHTML = result;
+
       });
       // google.maps.event.addListener(map, "click", function (event) {
     // var latitude = event.latLng.lat();

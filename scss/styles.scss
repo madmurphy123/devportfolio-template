@@ -1218,3 +1218,22 @@ input {
   background-position: center;
   background-image: url('appimages/offlinemap.jpg');
 }
+
+#distance {
+        background-color: white;
+        margin: 1em 0;
+        border: 0;
+        box-shadow: inset 0 0 0 2px #3498db;
+        color: #374054!important;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 0.8em;
+        height: 3.75em;
+        line-height: 3.75em;
+        padding: 0 2.25em;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        white-space: nowrap;
+}
+

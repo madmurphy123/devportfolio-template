@@ -8,7 +8,7 @@ if(newsContainer){
                 return `
                   <div class="project shadow-large">
                     <div class="blog-image">
-                        <img src="${article.urlToImage}" />
+                        <img src="${article.urlToImage}" alt="${article.title}" />
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
@@ -16,7 +16,7 @@ if(newsContainer){
                         <p>
                             ${article.description}
                         </p>
-                        <a href="" target="blank">Read More</a>
+                        <a href=" ${article.url}" target="blank">Read More</a>
                     </div>
                     <!-- End .project-info -->
                 </div>`;
