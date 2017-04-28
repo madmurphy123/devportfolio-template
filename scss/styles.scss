@@ -140,6 +140,15 @@ body {
   }
 }
 
+@-webkit-keyframes dropHeader {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 header {
     position: absolute;
     top: 0;
@@ -430,6 +439,23 @@ footer {
 }
 
 @keyframes pulsate {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(1.2, 1.2);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+
+
+
+@-webkit-keyframes pulsate {
     0% {
         transform: scale(1, 1);
     }
