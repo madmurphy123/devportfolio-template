@@ -6,7 +6,7 @@ if(askJackForm){
             "name": e.target.name.value,
             "number": e.target.number.value,
             "email": e.target.email.value,
-            "message": e.target.message.value
+            // "message": e.target.message.value
         };
 
         fetch("http://jackcat.co.uk/", {mode: "no-cors", method: "POST", body: contact})
