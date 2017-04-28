@@ -2,6 +2,7 @@ const askJackForm = document.getElementById("askJackForm");
 if(askJackForm){
     const askJackFormSubmit = e => {
         e.preventDefault();
+        console.log("hello");
         const contact = {
             "name": e.target.name.value,
             "email": e.target.email.value,
