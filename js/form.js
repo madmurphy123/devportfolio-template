@@ -1,12 +1,11 @@
-const askJackForm = document.getElementById("contactForm");
+const askJackForm = document.getElementById("askJackForm");
 if(askJackForm){
     const askJackFormSubmit = e => {
         e.preventDefault();
         const contact = {
             "name": e.target.name.value,
-            "number": e.target.number.value,
             "email": e.target.email.value,
-            // "message": e.target.message.value
+            "question": e.target.question.value,
         };
 
         fetch("http://jackcat.co.uk/", {mode: "no-cors", method: "POST", body: contact})
