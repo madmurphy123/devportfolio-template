@@ -46,7 +46,7 @@ if(eventsContainer){
                         <p>
                              ${event.text}
                          </p>
-                         <a href=" ${article.url}" target="blank">Read More</a>
+                        
                     </div>
                     <!-- End .project-info -->
                  </div>`;
