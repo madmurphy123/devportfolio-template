@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<!-- class="no-js" -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="57x57" href="appimages/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="appimages/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="appimages/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="appimages/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="appimages/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="appimages/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="appimages/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="appimages/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="appimages/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="appimages/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="appimages/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="appimages/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="appimages/favicon-16x16.png">
+<link rel="manifest" href="manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="appimages/ms-icon-144x144.png">
+<meta name="theme-color" content="#db5945"> 
+</head>
+
+<body>
+    <div id="mobile-menu-open" class="shadow-large">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <!-- End #mobile-menu-toggle -->
+    <header>
+        <div id="mobile-menu-close">
+            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <ul id="menu" class="shadow">
+            <li>
+                <a href="index.html" class="no-scroll">About</a>
+            </li>
+            <li>
+                <a href="index.html" class="no-scroll">Where I am</a>
+            </li>
+            <li>
+                <a href="index.html" class="no-scroll">Education</a>
+            </li>
+            <li>
+                <a href="index.html" class="no-scroll">Projects</a>
+            </li>
+            <li>
+                <a href="second.html" class="no-scroll">Blog</a>
+            </li>
+            <li>
+                <a href="index.html" class="no-scroll">Skills</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </header>
+    <!-- End header -->
+
+    <div id="lead">
+        <div id="lead-content">
+            <h1>Contact Me</h1>
+            <h2>Drop me a message, no matter how small</h2>
+            <a href="#" class="btn-rounded-white">Download Resume</a>
+        </div>
+        <!-- End #lead-content -->
+
+        <div id="lead-overlay"></div>
+
+        <div id="lead-down">
+            <span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </span>
+        </div>
+        <!-- End #lead-down -->
+    </div>
+    <!-- End #lead -->
+
+
+
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 copyright">
+                    <p>
+                        Copyright &copy; 2017 Aaron Murphy
+                    </p>
+                </div>
+                <div class="col-sm-2 top">
+                    <span id="to-top">
+                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="col-sm-5 social">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script>
+    if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('serviceworker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }).catch(function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+
+</script>
+    <!-- End footer -->
+   <!--  <script src="serviceworker.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/scripts.min.js"></script>
+    <script type="js/form.js"></script>
+
+</body>
+
+</html>
+
