@@ -27,6 +27,34 @@
 // }
 
 
+const eventsContainer = document.getElementById('events');
+if(eventsContainer){
+    fetch("events.json")
+        .then(response => {
+            return response.json();
+        }).then(events => {
+            const eventsHTML = events.map(event => {
+                return ` <div class="project shadow-large">
+//                     <div class="blog-image">
+//                         <img src="${event.picture}" alt="${event.heading}" />
+//                     </div>
+//                     <!-- End .project-image -->
+//                     <div class="project-info">
+//                         <h3>${event.heading}</h3>
+//                         <p>
+//                             ${event.text}
+//                         </p>
+//                         <a href=" ${event.link}" target="blank">Read More</a>
+//                     </div>
+//                     <!-- End .project-info -->
+//                 </div>`;
+              }).join("\n");
+            
+            eventsContainer.innerHTML = eventsHTML;
+        });
+}
+
+
 
 
 
