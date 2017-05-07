@@ -17,7 +17,7 @@ if(newsContainer){
                             ${article.description}
                         </p>
                         <a href=" ${article.url}" target="blank">Read More</a>
-                        <a href="furtherDetails.html" target="blank">Further Details</a>
+                        
                     </div>
                     <!-- End .project-info -->
                 </div>`;
