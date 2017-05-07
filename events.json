@@ -1,9 +1,8 @@
 [
     {
         "picture": "eventsimages/example-work01.jpg",
-        "heading": "Fetch and Reduce for API",
-        "text": "Today we’re going to learn how to get and manipulate data from an external API. 
-        We’ll use a practical example from one of my current projects that you will hopefully be able to use as a template when starting something of your own.",
+        "heading": "Fetch and Reduce with API",
+        "text": "Today we’re going to learn how to get and manipulate data from an external API. We’ll use a practical example from one of my current projects that you will hopefully be able to use as a template when starting something of your own. ",
         "link": "https://dev.to/jspeda/using-fetch-and-reduce-to-grab-and-format-data-from-an-external-api---a-practical-guide"
     },
     {
@@ -35,28 +34,28 @@
         "heading": "Ex officia laborum",
         "text": "Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.",
         "link": "http://google.com/?q=Ex officia laborum"
-    }
+    },
 
      {
         "picture": "eventsimages/example-work08.jpg",
         "heading": "Ex officia laborum",
         "text": "Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.",
         "link": "http://google.com/?q=Ex officia laborum"
-    }
+    },
 
      {
         "picture": "eventsimages/example-work08.jpg",
         "heading": "Ex officia laborum",
         "text": "Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.",
         "link": "http://google.com/?q=Ex officia laborum"
-    }
+    },
 
      {
         "picture": "eventsimages/example-work08.jpg",
         "heading": "Ex officia laborum",
         "text": "Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.",
         "link": "http://google.com/?q=Ex officia laborum"
-    }
+    },
 
      {
         "picture": "eventsimages/example-work08.jpg",
