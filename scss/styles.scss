@@ -686,11 +686,24 @@ footer {
 }
 
 .project-image {
-    // float: left;
+     float: left;
     img {
         width: 300px;
     }
 }
+
+@media only screen and (max-width: 750px) {
+
+.project-image {
+    float: none;
+    img {
+        width: 300px;
+    }
+}
+
+}
+
+
 
 .project-info {
     position: absolute;
@@ -1227,6 +1240,17 @@ input {
         width: 300px; 
     }
    
+}
+
+@media only screen and (max-width: 750px) {
+
+.blog-image {
+    float: none;
+    img {
+        width: 300px;
+    }
+}
+
 }
 
 
