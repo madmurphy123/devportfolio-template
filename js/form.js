@@ -10,7 +10,7 @@ if(askJackForm){
             "message": e.target.message.value,
         };
 
-        fetch("http://jackcat.co.uk/", {mode: "no-cors", method: "POST", body: contact})
+        fetch("https://www.codementor.io/learn-programming/12-important-things-to-include-in-web-dev-portfolios", {mode: "no-cors", method: "POST", body: contact})
             .then(response => {
                 console.log('hello response!', response);
             }).catch(() => {
