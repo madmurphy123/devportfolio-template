@@ -50,6 +50,7 @@ var CACHED_URLS = [
 
     // JavaScript
     BASE_PATH + 'js/scripts.js',
+    BASE_PATH + 'js/scripts.min.js',
     BASE_PATH + 'js/home.js',
     BASE_PATH + 'js/form.js',
     BASE_PATH + 'js/news.js',
