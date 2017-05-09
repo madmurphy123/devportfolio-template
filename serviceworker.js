@@ -60,8 +60,8 @@ var CACHED_URLS = [
     // Manifest
     BASE_PATH + 'manifest.json',
   // CSS and fonts
-    'https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en',
-    'https://fonts.googleapis.com/icon?family=Material+Icons',
+    // 'https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en',
+    // 'https://fonts.googleapis.com/icon?family=Material+Icons',
      BASE_PATH + 'css/bootstrap.min.css',
      BASE_PATH + 'css/styles.css'
 ];
@@ -119,16 +119,16 @@ self.addEventListener('fetch', function(event) {
     );
 
       
- // // Handle requests for Google Maps JavaScript API file
- //  } else if (requestURL.href === googleMapsAPIJS) {
- //    event.respondWith(
- //      fetch(
- //        googleMapsAPIJS+'&'+Date.now(),
- //        { mode: 'no-cors', cache: 'no-store' }
- //      ).catch(function() {
- //        return caches.match('offline-map.js');
- //      })
- //    );
+ // Handle requests for Google Maps JavaScript API file
+  } else if (requestURL.href === googleMapsAPIJS) {
+    event.respondWith(
+      fetch(
+        googleMapsAPIJS+'&'+Date.now(),
+        { mode: 'no-cors', cache: 'no-store' }
+      ).catch(function() {
+        return caches.match('offline-map.js');
+      })
+    );
       
       // Handle requests for events JSON file
   } else if (requestURL.pathname === BASE_PATH + 'events.json') {
