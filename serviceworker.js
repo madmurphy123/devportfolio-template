@@ -108,19 +108,6 @@ self.addEventListener('fetch', function(event) {
       })
     );
 
-     } else if (requestURL.pathname === BASE_PATH + 'third.html') {
-    event.respondWith(
-      caches.open(CACHE_NAME).then(function(cache) {
-        return cache.match('third.html').then(function(cachedResponse) {
-          var fetchPromise = fetch('third.html').then(function(networkResponse) {
-            cache.put('third.html', networkResponse.clone());
-            return networkResponse;
-          });
-          return cachedResponse || fetchPromise;
-        });
-      })
-    );
-
       
  // Handle requests for Google Maps JavaScript API file
   } else if (requestURL.href === googleMapsAPIJS) {
@@ -134,17 +121,17 @@ self.addEventListener('fetch', function(event) {
     );
       
       // Handle requests for events JSON file
-  // } else if (requestURL.pathname === BASE_PATH + 'events.json') {
-  //   event.respondWith(
-  //     caches.open(CACHE_NAME).then(function(cache) {
-  //       return fetch(event.request).then(function(networkResponse) {
-  //         cache.put(event.request, networkResponse.clone());
-  //         return networkResponse;
-  //       }).catch(function() {
-  //         return caches.match(event.request);
-  //       });
-  //     })
-  //   );
+  } else if (requestURL.pathname === BASE_PATH + 'events.json') {
+    event.respondWith(
+      caches.open(CACHE_NAME).then(function(cache) {
+        return fetch(event.request).then(function(networkResponse) {
+          cache.put(event.request, networkResponse.clone());
+          return networkResponse;
+        }).catch(function() {
+          return caches.match(event.request);
+        });
+      })
+    );
   } else if (requestURL.href === newsAPIJSON) {
     event.respondWith(
       caches.open(CACHE_NAME).then(function(cache) {
@@ -158,7 +145,19 @@ self.addEventListener('fetch', function(event) {
       })
     );
   // Handle requests for event images.
-  
+  } else if (requestURL.pathname.includes('/eventsimages/')) {
+    event.respondWith(
+      caches.open(CACHE_NAME).then(function(cache) {
+        return cache.match(event.request).then(function(cacheResponse) {
+          return cacheResponse||fetch(event.request).then(function(networkResponse) {
+            cache.put(event.request, networkResponse.clone());
+            return networkResponse;
+          }).catch(function() {
+            return cache.match('appimages/event-default.png');
+          });
+        });
+      })
+    );
   // 
   } else if (requestURL.href.includes('bbci.co.uk/news/')) {
     event.respondWith(
@@ -174,7 +173,33 @@ self.addEventListener('fetch', function(event) {
       })
     );
 
-    
+      
+      // Handle requests for events JSON file
+  } else if (requestURL.pathname === BASE_PATH + 'events.json') {
+    event.respondWith(
+      caches.open(CACHE_NAME).then(function(cache) {
+        return fetch(event.request).then(function(networkResponse) {
+          cache.put(event.request, networkResponse.clone());
+          return networkResponse;
+        }).catch(function() {
+          return caches.match(event.request);
+        });
+      })
+    );
+  // Handle requests for event images.
+  } else if (requestURL.pathname.includes('/eventsimages/')) {
+    event.respondWith(
+      caches.open(CACHE_NAME).then(function(cache) {
+        return cache.match(event.request).then(function(cacheResponse) {
+          return cacheResponse||fetch(event.request).then(function(networkResponse) {
+            cache.put(event.request, networkResponse.clone());
+            return networkResponse;
+          }).catch(function() {
+            return cache.match('appimages/event-default.png');
+          });
+        });
+      })
+    );
 
   } else if (
     CACHED_URLS.includes(requestURL.href) ||
@@ -204,5 +229,3 @@ self.addEventListener('activate', function(event) {
     })
   );
 });
-
-
