@@ -47,11 +47,12 @@ var CACHED_URLS = [
     BASE_PATH + 'appimages/event-default.png', //default image on blog
 
     // JavaScript
-    BASE_PATH + 'offline-map.js',
     BASE_PATH + 'js/scripts.js',
     BASE_PATH + 'js/home.js',
     BASE_PATH + 'js/form.js',
     BASE_PATH + 'js/news.js',
+    BASE_PATH + 'offline-map.js',
+   
     
     //json
     BASE_PATH + 'events.json',
