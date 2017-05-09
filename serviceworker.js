@@ -26,9 +26,11 @@ var CACHED_URLS = [
      BASE_PATH +'appimages/hangman.png',
      BASE_PATH +'appimages/dice.png',
      BASE_PATH +'appimages/me.png',
+     BASE_PATH +'appimages/me-200.png',
+     BASE_PATH +'appimages/me-400.png',
      BASE_PATH +'appimages/fish.png',
-     BASE_PATH + 'appimages/backdrop.png',
-     BASE_PATH + 'appimages/backdrop-mobile.png',
+     BASE_PATH +'appimages/backdrop.png',
+     BASE_PATH +'appimages/backdrop-mobile.png',
 
     //Images for page
     BASE_PATH + 'appimages/offlinemap.jpg',
@@ -60,8 +62,8 @@ var CACHED_URLS = [
     // Manifest
     BASE_PATH + 'manifest.json',
   // CSS and fonts
-    // 'https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en',
-    // 'https://fonts.googleapis.com/icon?family=Material+Icons',
+    'https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en',
+    'https://fonts.googleapis.com/icon?family=Material+Icons',
      BASE_PATH + 'css/bootstrap.min.css',
      BASE_PATH + 'css/styles.css'
 ];
