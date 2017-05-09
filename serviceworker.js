@@ -133,17 +133,17 @@ self.addEventListener('fetch', function(event) {
     );
       
       // Handle requests for events JSON file
-  } else if (requestURL.pathname === BASE_PATH + 'events.json') {
-    event.respondWith(
-      caches.open(CACHE_NAME).then(function(cache) {
-        return fetch(event.request).then(function(networkResponse) {
-          cache.put(event.request, networkResponse.clone());
-          return networkResponse;
-        }).catch(function() {
-          return caches.match(event.request);
-        });
-      })
-    );
+  // } else if (requestURL.pathname === BASE_PATH + 'events.json') {
+  //   event.respondWith(
+  //     caches.open(CACHE_NAME).then(function(cache) {
+  //       return fetch(event.request).then(function(networkResponse) {
+  //         cache.put(event.request, networkResponse.clone());
+  //         return networkResponse;
+  //       }).catch(function() {
+  //         return caches.match(event.request);
+  //       });
+  //     })
+  //   );
   } else if (requestURL.href === newsAPIJSON) {
     event.respondWith(
       caches.open(CACHE_NAME).then(function(cache) {
