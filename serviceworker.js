@@ -51,7 +51,7 @@ var CACHED_URLS = [
     BASE_PATH + 'js/home.js',
     BASE_PATH + 'js/form.js',
     BASE_PATH + 'js/news.js',
-    BASE_PATH + 'offline-map.js',
+    // BASE_PATH + 'offline-map.js',
    
     
     //json
@@ -60,8 +60,8 @@ var CACHED_URLS = [
     // Manifest
     BASE_PATH + 'manifest.json',
   // CSS and fonts
-    'https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en',
-    'https://fonts.googleapis.com/icon?family=Material+Icons',
+    // 'https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en',
+    // 'https://fonts.googleapis.com/icon?family=Material+Icons',
      BASE_PATH + 'css/bootstrap.min.css',
      BASE_PATH + 'css/styles.css'
 ];
