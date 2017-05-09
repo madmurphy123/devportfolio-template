@@ -44,26 +44,26 @@ var CACHED_URLS = [
     BASE_PATH + 'appimages/ms-icon-150x150.png',
     BASE_PATH + 'appimages/ms-icon-310x310.png',
    
-    BASE_PATH + 'appimages/event-default.png' //default image on blog
+    BASE_PATH + 'appimages/event-default.png', //default image on blog
 
-  //   // JavaScript
-  //   BASE_PATH + 'js/scripts.js',
-  //   BASE_PATH + 'js/home.js',
-  //   BASE_PATH + 'js/form.js',
-  //   BASE_PATH + 'js/news.js',
-  //   BASE_PATH + 'offline-map.js',
+    // JavaScript
+    BASE_PATH + 'js/scripts.js',
+    BASE_PATH + 'js/home.js',
+    BASE_PATH + 'js/form.js',
+    BASE_PATH + 'js/news.js',
+    BASE_PATH + 'offline-map.js',
    
     
-  //   //json
-  //   BASE_PATH + 'events.json',
+    //json
+    BASE_PATH + 'events.json',
     
-  //   // Manifest
-  //   BASE_PATH + 'manifest.json',
-  // // CSS and fonts
-  //   'https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en',
-  //   'https://fonts.googleapis.com/icon?family=Material+Icons',
-  //    BASE_PATH + 'css/bootstrap.min.css',
-  //    BASE_PATH + 'css/styles.css'
+    // Manifest
+    BASE_PATH + 'manifest.json',
+  // CSS and fonts
+    'https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en',
+    'https://fonts.googleapis.com/icon?family=Material+Icons',
+     BASE_PATH + 'css/bootstrap.min.css',
+     BASE_PATH + 'css/styles.css'
 ];
 
 var googleMapsAPIJS = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyD8GS9IEYRrTEbXtN7rI1Z6in3XFB9z2W0&callback=initMap';
@@ -119,16 +119,16 @@ self.addEventListener('fetch', function(event) {
     );
 
       
- // Handle requests for Google Maps JavaScript API file
-  } else if (requestURL.href === googleMapsAPIJS) {
-    event.respondWith(
-      fetch(
-        googleMapsAPIJS+'&'+Date.now(),
-        { mode: 'no-cors', cache: 'no-store' }
-      ).catch(function() {
-        return caches.match('offline-map.js');
-      })
-    );
+ // // Handle requests for Google Maps JavaScript API file
+ //  } else if (requestURL.href === googleMapsAPIJS) {
+ //    event.respondWith(
+ //      fetch(
+ //        googleMapsAPIJS+'&'+Date.now(),
+ //        { mode: 'no-cors', cache: 'no-store' }
+ //      ).catch(function() {
+ //        return caches.match('offline-map.js');
+ //      })
+ //    );
       
       // Handle requests for events JSON file
   } else if (requestURL.pathname === BASE_PATH + 'events.json') {
