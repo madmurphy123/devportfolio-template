@@ -26,6 +26,8 @@ var CACHED_URLS = [
      BASE_PATH +'appimages/hangman.png',
      BASE_PATH +'appimages/dice.png',
      BASE_PATH +'appimages/me.png',
+     BASE_PATH +'appimages/me-200.png',
+     BASE_PATH +'appimages/me-400.png',
      BASE_PATH +'appimages/fish.png',
      BASE_PATH + 'appimages/backdrop.png',
      BASE_PATH + 'appimages/backdrop-mobile.png',
