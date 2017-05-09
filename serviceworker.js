@@ -5,10 +5,9 @@ var newsAPIJSON = "https://newsapi.org/v1/articles?source=bbc-news&apiKey=a5ba2a
 
 var CACHED_URLS = [
     // Our HTML
-    BASE_PATH + 'index.html',
+    BASE_PATH + 'first.html',
     
     BASE_PATH + 'second.html',
-    BASE_PATH + 'third.html',
     BASE_PATH + 'appimages/jack.jpg',
     BASE_PATH + 'appimages/news-default.jpg', 
 
@@ -21,16 +20,6 @@ var CACHED_URLS = [
     BASE_PATH + 'appimages/android-icon-144x144.png',
     BASE_PATH + 'appimages/android-icon-192x192.png',
     BASE_PATH + 'appimages/favicon-32x32.png',
-
-     BASE_PATH +'appimages/car.png',
-     BASE_PATH +'appimages/hangman.png',
-     BASE_PATH +'appimages/dice.png',
-     BASE_PATH +'appimages/me.png',
-     BASE_PATH +'appimages/me-200.png',
-     BASE_PATH +'appimages/me-400.png',
-     BASE_PATH +'appimages/fish.png',
-     BASE_PATH +'appimages/backdrop.png',
-     BASE_PATH +'appimages/backdrop-mobile.png',
 
     //Images for page
     BASE_PATH + 'appimages/offlinemap.jpg',
@@ -49,12 +38,9 @@ var CACHED_URLS = [
     BASE_PATH + 'appimages/event-default.png', //default image on blog
 
     // JavaScript
-    BASE_PATH + 'js/scripts.js',
-    BASE_PATH + 'js/home.js',
-    BASE_PATH + 'js/form.js',
-    BASE_PATH + 'js/news.js',
     BASE_PATH + 'offline-map.js',
-   
+    BASE_PATH + 'material.js',
+    BASE_PATH + 'scripts.js',
     
     //json
     BASE_PATH + 'events.json',
@@ -64,8 +50,8 @@ var CACHED_URLS = [
   // CSS and fonts
     'https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en',
     'https://fonts.googleapis.com/icon?family=Material+Icons',
-     BASE_PATH + 'css/bootstrap.min.css',
-     BASE_PATH + 'css/styles.css'
+    BASE_PATH + 'min-style.css',
+    BASE_PATH + 'styles.css'
 ];
 
 var googleMapsAPIJS = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyD8GS9IEYRrTEbXtN7rI1Z6in3XFB9z2W0&callback=initMap';
