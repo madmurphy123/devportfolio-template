@@ -44,7 +44,7 @@ var CACHED_URLS = [
     BASE_PATH + 'appimages/ms-icon-150x150.png',
     BASE_PATH + 'appimages/ms-icon-310x310.png',
    
-    BASE_PATH + 'appimages/event-default.png', //default image on blog
+    BASE_PATH + 'appimages/event-default.png' //default image on blog
 
   //   // JavaScript
   //   BASE_PATH + 'js/scripts.js',
