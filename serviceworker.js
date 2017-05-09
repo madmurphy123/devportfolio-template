@@ -173,36 +173,7 @@ self.addEventListener('fetch', function(event) {
       })
     );
 
-      
-      // Handle requests for events JSON fil
-  // Handle requests for event images.
-  } else if (requestURL.pathname.includes('/eventsimages/')) {
-    event.respondWith(
-      caches.open(CACHE_NAME).then(function(cache) {
-        return cache.match(event.request).then(function(cacheResponse) {
-          return cacheResponse||fetch(event.request).then(function(networkResponse) {
-            cache.put(event.request, networkResponse.clone());
-            return networkResponse;
-          }).catch(function() {
-            return cache.match('appimages/event-default.png');
-          });
-        });
-      })
-    );
-
-  } else if (
-    CACHED_URLS.includes(requestURL.href) ||
-    CACHED_URLS.includes(requestURL.pathname)
-  ) {
-    event.respondWith(
-      caches.open(CACHE_NAME).then(function(cache) {
-        return cache.match(event.request).then(function(response) {
-          return response || fetch(event.request);
-        });
-      })
-    );
-  }
-});
+    
 
 
 self.addEventListener('activate', function(event) {
