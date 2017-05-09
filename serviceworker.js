@@ -1,5 +1,5 @@
 var BASE_PATH = '/devportfolio-template/';
-var CACHE_NAME = 'gih-cache-v7';
+var CACHE_NAME = 'gih-cache-v6';
 var TEMP_IMAGE_CACHE_NAME = 'temp-cache-v1';
 var newsAPIJSON = "https://newsapi.org/v1/articles?source=bbc-news&apiKey=a5ba2a0461c24459b8c4f3e746c9ae8f";
 
@@ -26,11 +26,9 @@ var CACHED_URLS = [
      BASE_PATH +'appimages/hangman.png',
      BASE_PATH +'appimages/dice.png',
      BASE_PATH +'appimages/me.png',
-     BASE_PATH +'appimages/me-200.png',
-     BASE_PATH +'appimages/me-400.png',
      BASE_PATH +'appimages/fish.png',
-     BASE_PATH +'appimages/backdrop.png',
-     BASE_PATH +'appimages/backdrop-mobile.png',
+     BASE_PATH + 'appimages/backdrop.png',
+     BASE_PATH + 'appimages/backdrop-mobile.png',
 
     //Images for page
     BASE_PATH + 'appimages/offlinemap.jpg',
@@ -49,13 +47,11 @@ var CACHED_URLS = [
     BASE_PATH + 'appimages/event-default.png', //default image on blog
 
     // JavaScript
+    BASE_PATH + 'offline-map.js',
     BASE_PATH + 'js/scripts.js',
-    BASE_PATH + 'js/scripts.min.js',
     BASE_PATH + 'js/home.js',
     BASE_PATH + 'js/form.js',
     BASE_PATH + 'js/news.js',
-    BASE_PATH + 'offline-map.js',
-   
     
     //json
     BASE_PATH + 'events.json',
@@ -65,9 +61,6 @@ var CACHED_URLS = [
   // CSS and fonts
     'https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en',
     'https://fonts.googleapis.com/icon?family=Material+Icons',
-    'https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js',
-    'https://fonts.googleapis.com/css?family=Lato:300,400,700,900',
-     BASE_PATH + 'libs/font-awesome/css/font-awesome.min.css',
      BASE_PATH + 'css/bootstrap.min.css',
      BASE_PATH + 'css/styles.css'
 ];
@@ -86,12 +79,12 @@ self.addEventListener('install', function(event) {
 self.addEventListener('fetch', function(event) {
   var requestURL = new URL(event.request.url);
   // Handle requests for index.html
-  if (requestURL.pathname === BASE_PATH + 'first.html') {
+  if (requestURL.pathname === BASE_PATH + 'index.html') {
     event.respondWith(
       caches.open(CACHE_NAME).then(function(cache) {
-        return cache.match('first.html').then(function(cachedResponse) {
-          var fetchPromise = fetch('first.html').then(function(networkResponse) {
-            cache.put('first.html', networkResponse.clone());
+        return cache.match('index.html').then(function(cachedResponse) {
+          var fetchPromise = fetch('index.html').then(function(networkResponse) {
+            cache.put('index.html', networkResponse.clone());
             return networkResponse;
           });
           return cachedResponse || fetchPromise;
@@ -111,7 +104,7 @@ self.addEventListener('fetch', function(event) {
       })
     );
 
-     } else if (requestURL.pathname === BASE_PATH + 'third.html') {
+  } else if (requestURL.pathname === BASE_PATH + 'third.html') {
     event.respondWith(
       caches.open(CACHE_NAME).then(function(cache) {
         return cache.match('third.html').then(function(cachedResponse) {
@@ -137,17 +130,17 @@ self.addEventListener('fetch', function(event) {
     );
       
       // Handle requests for events JSON file
-  // } else if (requestURL.pathname === BASE_PATH + 'events.json') {
-  //   event.respondWith(
-  //     caches.open(CACHE_NAME).then(function(cache) {
-  //       return fetch(event.request).then(function(networkResponse) {
-  //         cache.put(event.request, networkResponse.clone());
-  //         return networkResponse;
-  //       }).catch(function() {
-  //         return caches.match(event.request);
-  //       });
-  //     })
-  //   );
+  } else if (requestURL.pathname === BASE_PATH + 'events.json') {
+    event.respondWith(
+      caches.open(CACHE_NAME).then(function(cache) {
+        return fetch(event.request).then(function(networkResponse) {
+          cache.put(event.request, networkResponse.clone());
+          return networkResponse;
+        }).catch(function() {
+          return caches.match(event.request);
+        });
+      })
+    );
   } else if (requestURL.href === newsAPIJSON) {
     event.respondWith(
       caches.open(CACHE_NAME).then(function(cache) {
@@ -161,7 +154,19 @@ self.addEventListener('fetch', function(event) {
       })
     );
   // Handle requests for event images.
-  
+  } else if (requestURL.pathname.includes('/eventsimages/')) {
+    event.respondWith(
+      caches.open(CACHE_NAME).then(function(cache) {
+        return cache.match(event.request).then(function(cacheResponse) {
+          return cacheResponse||fetch(event.request).then(function(networkResponse) {
+            cache.put(event.request, networkResponse.clone());
+            return networkResponse;
+          }).catch(function() {
+            return cache.match('appimages/event-default.png');
+          });
+        });
+      })
+    );
   // 
   } else if (requestURL.href.includes('bbci.co.uk/news/')) {
     event.respondWith(
@@ -177,7 +182,33 @@ self.addEventListener('fetch', function(event) {
       })
     );
 
-    
+      
+      // Handle requests for events JSON file
+  } else if (requestURL.pathname === BASE_PATH + 'events.json') {
+    event.respondWith(
+      caches.open(CACHE_NAME).then(function(cache) {
+        return fetch(event.request).then(function(networkResponse) {
+          cache.put(event.request, networkResponse.clone());
+          return networkResponse;
+        }).catch(function() {
+          return caches.match(event.request);
+        });
+      })
+    );
+  // Handle requests for event images.
+  } else if (requestURL.pathname.includes('/eventsimages/')) {
+    event.respondWith(
+      caches.open(CACHE_NAME).then(function(cache) {
+        return cache.match(event.request).then(function(cacheResponse) {
+          return cacheResponse||fetch(event.request).then(function(networkResponse) {
+            cache.put(event.request, networkResponse.clone());
+            return networkResponse;
+          }).catch(function() {
+            return cache.match('appimages/event-default.png');
+          });
+        });
+      })
+    );
 
   } else if (
     CACHED_URLS.includes(requestURL.href) ||
@@ -207,5 +238,8 @@ self.addEventListener('activate', function(event) {
     })
   );
 });
+
+
+
 
 
