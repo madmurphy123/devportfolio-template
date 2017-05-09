@@ -65,6 +65,7 @@ var CACHED_URLS = [
   // CSS and fonts
     'https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en',
     'https://fonts.googleapis.com/icon?family=Material+Icons',
+    'https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js',
      BASE_PATH + 'css/bootstrap.min.css',
      BASE_PATH + 'css/styles.css'
 ];
