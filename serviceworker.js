@@ -51,6 +51,7 @@ var CACHED_URLS = [
     // JavaScript
     BASE_PATH + 'offline-map.js',
     BASE_PATH + 'js/scripts.js',
+    BASE_PATH + 'js/scripts.min.js',
     BASE_PATH + 'js/home.js',
     BASE_PATH + 'js/form.js',
     BASE_PATH + 'js/news.js',
@@ -64,6 +65,7 @@ var CACHED_URLS = [
     'https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en',
     'https://fonts.googleapis.com/icon?family=Material+Icons',
     'https://fonts.googleapis.com/css?family=Lato:300,400,700,900',
+    'https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js',
      BASE_PATH + 'css/bootstrap.min.css',
      BASE_PATH + 'libs/font-awesome/css/font-awesome.min.css',
      BASE_PATH + 'css/styles.css'
