@@ -1,5 +1,5 @@
 var BASE_PATH = '/devportfolio-template/';
-var CACHE_NAME = 'gih-cache-v7 - https://madmurphy123.github.io';
+var CACHE_NAME = 'gih-cache-v7';
 var TEMP_IMAGE_CACHE_NAME = 'temp-cache-v1';
 var newsAPIJSON = "https://newsapi.org/v1/articles?source=bbc-news&apiKey=a5ba2a0461c24459b8c4f3e746c9ae8f";
 
